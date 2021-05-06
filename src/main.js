@@ -1,8 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+
+
 Vue.config.productionTip = false
 
+// 导入 element-ui
+import ElementUI from 'element-ui'
+// 导入 element-ui 的样式
+import 'element-ui/lib/theme-chalk/index.css';
+// use一下
+Vue.use(ElementUI)
+
+// 导入全局初始化样式
+import '@/assets/index.css'
 
 // 导入
 import VueRouter from 'vue-router'
@@ -56,15 +67,6 @@ let router = new VueRouter({
     }
   ]
 })
-
-// 导入 element-ui
-import ElementUI from 'element-ui'
-// 导入 element-ui 的样式
-import 'element-ui/lib/theme-chalk/index.css';
-// use一下
-Vue.use(ElementUI)
-
-
 
 new Vue({
   render: h => h(App),

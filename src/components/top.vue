@@ -1,37 +1,41 @@
 <template>
-
-<div class="top">
-    <img src="@/assets/01.top.jpg">
-    <input type="text" v-model="inputValue" @keyup.enter="toSearch">
-    <el-button type="success">按钮</el-button>
-</div>
-  
+  <div class="top-container">
+    <div class="left-box">
+      <div class="icon-wrapper">
+        <span class="iconfont icon-home"></span>
+        <span class="iconfont icon-sami-select"></span>
+        <span class="iconfont icon-full-screen"></span>
+      </div>
+      <div class="history-wrapper">
+        <span class="iconfont icon-arrow-lift"></span>
+        <span class="iconfont icon-arrow-right"></span>
+      </div>
+    </div>
+    <div class="right-box">
+      <div class="el-input el-input--small el-input--prefix">
+        <input
+          type="text"
+          autocomplete="off"
+          placeholder="搜索"
+          class="el-input__inner"
+        />
+        <span class="el-input__prefix">
+          <i class="el-input__icon el-icon-search"></i>
+        </span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
+  export default {
+    name: 'top',
     data() {
-        return {
-            inputValue:""
-        }
-    },
-    methods: {
-        toSearch(){
-            if(!this.inputValue) {
-                alert("输入不能为空！");
-            } else {
-                this.$router.push(`/result?q=${this.inputValue}`)
-            }
-        }
-    },
-}
+      return {
+        query: ''
+      }
+    }
+  }
 </script>
 
-<style>
-.top{
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-}
-
-</style>
+<style scoped></style>
